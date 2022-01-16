@@ -1,6 +1,6 @@
 {
   "name": "m1-watchdog",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Minter Node watchdog with Telegram logging",
   "main": "./src/index.js",
   "scripts": {
@@ -12,11 +12,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "dotenv": "^8.2.0",
     "esm": "^3.2.22",
-    "minter-js-sdk": "^0.35.4",
+    "minter-js-sdk": "^0.38.1",
     "minterjs-wallet": "^6.0.0"
   },
   "devDependencies": {

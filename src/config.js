@@ -31,14 +31,14 @@ export const NODE_API_MEMPOOL_RETRY_COUNT = parseInt(process.env.NODE_API_MEMPOO
 export const NODE_API_NONCE_RETRY_COUNT = parseInt(process.env.NODE_API_NONCE_RETRY_COUNT || 3);
 
 export const WATCHDOG_MONIKER = process.env.WATCHDOG_MONIKER || 'watchdog';
+export const WATCHDOG_DISABLE_MISSED_BLOCK_NOTIFICATIONS = castBool(process.env.WATCHDOG_DISABLE_MISSED_BLOCK_NOTIFICATIONS || false);
 export const WATCHDOG_WINDOW_WIDTH = parseInt(process.env.WATCHDOG_WINDOW_WIDTH || 24);
 export const WATCHDOG_MAX_MISSED = parseInt(process.env.WATCHDOG_MAX_MISSED || 3);
 export const WATCHDOG_VALIDATOR_PUBKEY = process.env.WATCHDOG_VALIDATOR_PUBKEY;
-export const WATCHDOG_DONT_NOTIFY_MISSED = castBool(process.env.WATCHDOG_DONT_NOTIFY_MISSED);
 
 export const MINTER_TX_GAS_COIN_ID = parseInt(process.env.MINTER_TX_GAS_COIN_ID || MINTER_CHAIN_PRIMARY_COIN);
 export const MINTER_TX_PRIVATE_KEY = typeof process.env.MINTER_TX_PRIVATE_KEY === 'string'
-    ? Buffer.from(process.env.MINTER_TX_PRIVATE_KEY, 'hex')
+    ? Buffer.from(process.env.MINTER_TX_PRIVATE_KEY.replace('0x', ''), 'hex')
     : process.env.MINTER_TX_PRIVATE_KEY;
 
 export const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
